@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>青山湖科技城数智领航平台</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.tsx"></script>
+        <script>
+            window.global = window;
+            let tid;
+            const htmlDom = document.documentElement;
+            const refreshRem = function () {
+                const clientWidth = htmlDom.clientWidth;
+                const clientHeight = htmlDom.clientHeight;
+                let size = clientWidth / 192;
+                // rem最小值限制
+                // htmlDom.style.fontSize = Math.max(size, 10) + 'px';
+                // window.rem = Math.max(size, 10);
+                htmlDom.style.fontSize = size + 'px';
+                window.rem = size;
+            };
+            addEventListener(
+                'resize',
+                function () {
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 300);
+                },
+                false
+            );
+            addEventListener(
+                'pageshow',
+                function (e) {
+                    if (e.persisted) {
+                        clearTimeout(tid);
+                        tid = setTimeout(refreshRem, 300);
+                    }
+                },
+                false
+            );
+            window.addEventListener(
+                'mousedown',
+                function (event) {
+                    if (1 == event.button) event.preventDefault();
+                },
+                false
+            );
+            refreshRem();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+variables:
+  BUILD_IMAGE: registry.cn-hangzhou.aliyuncs.com/mdt/node:16.13.0
+  PRI_TAG: qingshanhu-nginx
+
+include:
+  - project: devops-sre/devops-ci
+    ref: delivery_ci
+    file:
+      - frontend/.gitlab-ci.yml
+      - frontend/staging-gitlab-ci.yml
+      - frontend/prod-gitlab-ci.yml
+      - frontend/pri-gitlab-ci.yml

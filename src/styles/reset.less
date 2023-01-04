@@ -1,0 +1,208 @@
+// 样式初始化，antd默认样式
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+    background-color: rgba(245, 245, 245);
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#root {
+    font-size: 1.6rem;
+    // min-width: 1100px;
+    height: 100%;
+    overflow: hidden;
+    background-color: @back-color;
+    color: #fff;
+}
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(17, 175, 200, 0.2);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+    // background-color: #999;
+    border-radius: 8px;
+    background-color: rgba(17, 175, 200, 0.35);
+}
+.ant-select:not(.ant-select-customize-input) {
+    border-radius: 6px;
+    .ant-select-selector {
+        border-radius: 6px;
+        background-color: #f9fafb;
+    }
+    .ant-select-arrow {
+        color: #000;
+    }
+}
+.ant-modal-root {
+    .ant-modal-mask,
+    .ant-modal-wrap {
+        z-index: 1001;
+    }
+}
+.ant-btn {
+    border-radius: 6px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.ant-input,
+.ant-picker,
+.ant-input-number {
+    border-radius: 6px;
+    background-color: #f9fafb;
+    width: 100%;
+}
+.ant-checkbox-wrapper {
+    .ant-checkbox {
+        .ant-checkbox-inner {
+            background: rgba(10, 224, 255, 0.2);
+            border-color: rgba(10, 224, 255, 0.6);
+        }
+    }
+}
+.ant-modal {
+    .ant-modal-content {
+        background: linear-gradient(180deg, rgba(14, 56, 65, 0.7) 0%, #0e3841 100%);
+        border: 2px solid #46bcff;
+        border-radius: 30px;
+        .ant-modal-close {
+            svg {
+                color: #fff;
+            }
+        }
+        .ant-modal-header {
+            background-color: transparent;
+            border-bottom: none;
+            .ant-modal-title {
+                .fz(3.2);
+                color: #fff;
+                line-height: 1;
+            }
+        }
+        .ant-modal-footer {
+            border-top: none;
+        }
+    }
+}
