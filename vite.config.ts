@@ -14,7 +14,7 @@ require('dotenv').config();
 export default defineConfig((mode: ConfigEnv): UserConfig => {
     const isDev = mode.mode === 'development';
     return {
-        base: '/statics/qsh_screen/',
+        base: './',
         // alias config
         resolve: {
             alias: {
@@ -49,28 +49,13 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
             cors: true,
             // https: false,
             // 代理跨域（mock 不需要配置，这里只是个事列）
-            proxy: {
-                '/datlas': {
-                    target: 'https://www.datlas.cn',
-                    changeOrigin: true,
-                    rewrite: path => path.replace(/^\/datlas/, '')
-                },
-                '/qsh': {
-                    target: 'https://qingshanhu.metrodata.cn:9002',
-                    changeOrigin: true,
-                    rewrite: path => path.replace(/^\/qsh/, '')
-                },
-                '/lp': {
-                    target: 'https://linping-jingkai-internet.metrodata.cn:9002/',
-                    changeOrigin: true,
-                    rewrite: path => path.replace(/^\/lp/, '')
-                },
-                '/dzl': {
-                    target: 'https://dazoulang-zhihuijiaoyu-internet.metrodata.cn:9002/',
-                    changeOrigin: true,
-                    rewrite: path => path.replace(/^\/dzl/, '')
-                }
-            }
+            // proxy: {
+            //     '/bd': {
+            //         target: 'https://www.baidu.com',
+            //         changeOrigin: true,
+            //         rewrite: path => path.replace(/^\/bd/, '')
+            //     },
+            // }
         },
         // plugins
         plugins: [
