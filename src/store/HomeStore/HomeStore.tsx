@@ -1,17 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import dayjs from 'dayjs';
 import request from '@/api';
-
-// const transaction = [
-//     {
-//         action: 'update',
-//         template_uuid: API.UUID_PROMISE_REMIND,
-//         separate: [{ id: this.currentReport['id'], extra: { 手动提醒时间: moment().unix(), 审核状态: '已办' } }]
-//     },
-//     { action: 'create', template_uuid: API.UUID_POLICY_DECLARATION, extra: [reportExtra] },
-// ];
-// const [error] = await to(request.post('/collector/data/transaction', { transaction }));
-
 interface ITemplate {
     uuid: string;
     env: string;
