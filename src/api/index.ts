@@ -14,7 +14,7 @@ const axiosCanceler = new AxiosCanceler();
 
 const config = {
     baseURL: BASE_URL_DATLAS,
-    timeout: 10000,
+    timeout: 1000000,
     headers: { Authorization: getToken() }
 };
 

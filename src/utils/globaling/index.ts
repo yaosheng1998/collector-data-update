@@ -89,9 +89,25 @@ export const exportExcel = (
     const outputPos = Object.keys(output);
     const ref = `${outputPos[0]}:${outputPos[outputPos.length - 1]}`;
     const wb = { SheetNames: ['sheet'], Sheets: { sheet: Object.assign({}, output, { '!ref': ref, '!cols': wpx }) } };
-    console.log('headers', headers);
-    console.log('outputPos', outputPos);
-    console.log('ref', ref);
-    console.log('workbook', wb);
     writeFile(wb, fileName);
+};
+// 导入excel
+export const importsExcel = async (file: File) => {
+    return new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.onload = event => {
+            try {
+                const { result } = event.target;
+                const workbook = read(result, { type: 'binary' });
+                let data = [];
+                for (const sheet in workbook.Sheets) {
+                    data = data.concat(utils.sheet_to_json(workbook.Sheets[sheet]));
+                }
+                resolve(data);
+            } catch (e) {
+                reject('失败');
+            }
+        };
+        fileReader.readAsBinaryString(file);
+    });
 };

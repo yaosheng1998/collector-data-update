@@ -14,7 +14,7 @@ require('dotenv').config();
 export default defineConfig((mode: ConfigEnv): UserConfig => {
     const isDev = mode.mode === 'development';
     return {
-        base: '/statics/qsh_screen/',
+        base: './',
         // alias config
         resolve: {
             alias: {
