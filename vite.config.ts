@@ -46,16 +46,31 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
             host: '0.0.0.0', // 服务器主机名，如果允许外部访问，可设置为"0.0.0.0"
             port: 3000,
             open: true,
-            cors: true
+            cors: true,
             // https: false,
             // 代理跨域（mock 不需要配置，这里只是个事列）
-            // proxy: {
-            //     '/bd': {
-            //         target: 'https://www.baidu.com',
-            //         changeOrigin: true,
-            //         rewrite: path => path.replace(/^\/bd/, '')
-            //     },
-            // }
+            proxy: {
+                '/datlas': {
+                    target: 'https://www.datlas.cn',
+                    changeOrigin: true,
+                    rewrite: path => path.replace(/^\/datlas/, '')
+                },
+                '/qsh': {
+                    target: 'https://qingshanhu.metrodata.cn:9002',
+                    changeOrigin: true,
+                    rewrite: path => path.replace(/^\/qsh/, '')
+                },
+                '/lp': {
+                    target: 'https://linping-jingkai-internet.metrodata.cn:9002/',
+                    changeOrigin: true,
+                    rewrite: path => path.replace(/^\/lp/, '')
+                },
+                '/dzl': {
+                    target: 'https://dazoulang-zhihuijiaoyu-internet.metrodata.cn:9002/',
+                    changeOrigin: true,
+                    rewrite: path => path.replace(/^\/dzl/, '')
+                }
+            }
         },
         // plugins
         plugins: [
