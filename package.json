@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start:dev": "dotenv -e env/dev.env vite",
+    "start": "dotenv -e env/dev.env vite",
     "start:dev-prod": "dotenv -e env/dev-prod.env vite",
     "start:dev-pri": "dotenv -e env/dev-pri.env vite",
     "start:prod": "dotenv -e env/dev-prod.env vite",
@@ -16,6 +16,7 @@
   "dependencies": {
     "ahooks": "^3.5.2",
     "antd": "^4.21.5",
+    "await-lock": "^2.2.2",
     "await-to-js": "^3.0.0",
     "axios": "^0.27.2",
     "classname": "^0.0.0",
